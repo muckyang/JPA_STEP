@@ -3,9 +3,10 @@ package com.jpa.step.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,12 +38,25 @@ public class Order {
         user.getOrders().add(this);
     }
 
+
     public void addOrderItem(OrderItem orderItem){
+
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
-    public enum OrderStatus{
-        ORDER ,CANCEL;
+
+    public String toString() {
+        StringBuilder stringBuffer = new StringBuilder();
+        stringBuffer.append("\n").append(this.getUser()).append("님의 주문서").append(this.getId()).append("\n");
+        List<OrderItem> list =this.getOrderItems();
+        for(OrderItem oi : list){
+            stringBuffer.append(oi.toString());
+        }
+        return stringBuffer.toString();
+    }
+
+    public enum OrderStatus {
+        ORDER, CANCEL;
     }
 }

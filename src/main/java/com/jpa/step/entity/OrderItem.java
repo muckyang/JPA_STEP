@@ -44,4 +44,9 @@ public class OrderItem {
         this.order = order;
         order.getOrderItems().add(this);
     }
+
+    public String toString(){
+        return "\n" + this.getItem().getName() + " : " + this.getOrderPrice();
+    }
+
 }
