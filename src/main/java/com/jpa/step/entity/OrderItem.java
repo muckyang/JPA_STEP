@@ -44,11 +44,10 @@ public class OrderItem {
         this.order = order;
         order.getOrderItems().add(this);
     }
-<<<<<<< HEAD
-=======
+
 
     public String toString(){
         return "\n" + this.getItem().getName() + " : " + this.getOrderPrice();
     }
->>>>>>> chapter05
+
 }

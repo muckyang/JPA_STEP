@@ -2,15 +2,14 @@ package com.jpa.step.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-<<<<<<< HEAD
-=======
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
->>>>>>> chapter05
+
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +19,6 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> chapter05
     @Id
     @GeneratedValue
     @Column(name = "order_id")
@@ -46,19 +41,16 @@ public class Order {
         user.getOrders().add(this);
     }
 
-<<<<<<< HEAD
-    public void addOrderItem(OrderItem orderItem){
-=======
+
     public void addOrderItem(OrderItem orderItem) {
->>>>>>> chapter05
+
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
-<<<<<<< HEAD
-    public enum OrderStatus{
-        ORDER ,CANCEL;
-=======
+    public enum OrderStatus {
+        ORDER, CANCEL;
+    }
     public String toString() {
         StringBuilder stringBuffer = new StringBuilder();
         stringBuffer.append("\n").append(this.getUser()).append("님의 주문서").append(this.getId()).append("\n");
@@ -69,8 +61,4 @@ public class Order {
         return stringBuffer.toString();
     }
 
-    public enum OrderStatus {
-        ORDER, CANCEL;
->>>>>>> chapter05
-    }
 }

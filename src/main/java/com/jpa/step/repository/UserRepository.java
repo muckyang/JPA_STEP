@@ -19,8 +19,4 @@ public class UserRepository {
         return em.find(User.class,userId);
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> chapter05
 }
