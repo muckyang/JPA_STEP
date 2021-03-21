@@ -8,8 +8,9 @@ import javax.persistence.EntityManager;
 
 @Configuration
 public class SpringConfig {
-    private final EntityManager em;
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private EntityManager em;
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
     public SpringConfig(EntityManager em) {
         logger.debug("make EntityManager ");

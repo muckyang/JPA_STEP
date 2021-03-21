@@ -2,6 +2,8 @@ package com.jpa.step.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,6 +16,7 @@ import java.util.List;
 @Setter
 @Table(name = "orders")
 public class Order {
+
 
     @Id
     @GeneratedValue
@@ -37,12 +40,22 @@ public class Order {
         user.getOrders().add(this);
     }
 
-    public void addOrderItem(OrderItem orderItem){
+    public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
-    public enum OrderStatus{
-        ORDER ,CANCEL;
+    public String toString() {
+        StringBuilder stringBuffer = new StringBuilder();
+        stringBuffer.append("\n").append(this.getUser()).append("님의 주문서").append(this.getId()).append("\n");
+        List<OrderItem> list =this.getOrderItems();
+        for(OrderItem oi : list){
+            stringBuffer.append(oi.toString());
+        }
+        return stringBuffer.toString();
+    }
+
+    public enum OrderStatus {
+        ORDER, CANCEL;
     }
 }
