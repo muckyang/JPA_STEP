@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,6 @@ import java.util.List;
 @Setter
 @Table(name = "orders")
 public class Order {
-
 
     @Id
     @GeneratedValue
@@ -58,6 +58,5 @@ public class Order {
 
     public enum OrderStatus {
         ORDER, CANCEL;
-
     }
 }

@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+import java.util.stream.Collectors;
+
 @Repository
 public class ItemRepository {
 
@@ -35,5 +37,6 @@ public class ItemRepository {
         Item item = em.find(Item.class,itemId);
         item.setPrice(price);
         return item;
+
     }
 }

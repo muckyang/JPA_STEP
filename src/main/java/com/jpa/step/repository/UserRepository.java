@@ -19,5 +19,4 @@ public class UserRepository {
         return em.find(User.class,userId);
     }
 
-
 }
