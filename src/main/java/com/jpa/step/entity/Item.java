@@ -24,4 +24,13 @@ public class Item {
     private int stockQuantity;
 
 
+<<<<<<< HEAD
+=======
+    public String toString(){
+        return "\n"+
+                "    품명 : "+this.getName() + " \n" +
+                "    가격 : "+ this.getPrice() + "\n" +
+                "   할인율 : "+this.getStockQuantity() + "%";
+    }
+>>>>>>> chapter05
 }
