@@ -18,12 +18,9 @@ public class ItemRepository {
         em.persist(item);
     }
 
-
     public Item findOne(Long itemId) {
         return em.find(Item.class, itemId);
     }
-
-
 
     public List<Item> findAll() {
         return em.createQuery("select i from Item i ",Item.class)

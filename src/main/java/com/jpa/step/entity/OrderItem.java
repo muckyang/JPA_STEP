@@ -24,10 +24,7 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    //주문시 가격!
     private int orderPrice;
-
-
     private int count;
 
     public OrderItem() {
