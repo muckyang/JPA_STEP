@@ -37,13 +37,15 @@ public class Order {
     private OrderStatus status;
 
     public void setUser(User user) {
+        if(this.user!=null){
+            user.getOrders().remove(this);
+        }
         this.user = user;
         user.getOrders().add(this);
     }
 
 
     public void addOrderItem(OrderItem orderItem) {
-
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
