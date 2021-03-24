@@ -11,14 +11,9 @@ public class SpringConfig {
 
     private final EntityManager em;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
-
-
-
     public SpringConfig(EntityManager em) {
         logger.debug("make EntityManager ");
         this.em = em;
     }
-
 
 }

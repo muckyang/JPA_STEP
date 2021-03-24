@@ -36,6 +36,19 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
+
+    public enum OrderStatus {
+        ORDER, CANCEL;
+    }
+
+    public void setDelivery(Delivery delivery){
+        this.delivery= delivery;
+        delivery.setOrder(this);
+    }
+
     public void setUser(User user) {
         if(this.user!=null){
             user.getOrders().remove(this);
@@ -44,15 +57,11 @@ public class Order {
         user.getOrders().add(this);
     }
 
-
     public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
-    public enum OrderStatus {
-        ORDER, CANCEL;
-    }
     public String toString() {
         StringBuilder stringBuffer = new StringBuilder();
         stringBuffer.append("\n").append(this.getUser()).append("님의 주문서").append(this.getId()).append("\n");
